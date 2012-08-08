@@ -14,7 +14,6 @@
 		body, html {
 			background: #111;
 		}
-		.test {}
 		#header {
 			width: 100%;
 			margin-bottom: 50px;
@@ -24,9 +23,13 @@
 		.movie{
 			text-align: center;
 		}
-		.poster {
+		.movie img {
 			box-shadow: 1px 1px 15px #000;
-			margin: 7px;
+			margin: 10px;
+		}
+		#videoplayer {
+			margin: auto;
+			width:770px;
 		}
     </style>
 	
@@ -69,32 +72,38 @@
     <div class="container">
     
 
+<script type='text/javascript' src='jw/jwplayer.js'></script>
+ 
+<div id="videoplayer">
+	<h2>THOR</h2>
+	<div id='mediaspace'>THOR WILL REPLACE THIS TEXT</div>
+</div>
+ 
+<script type="text/javascript">
+    jwplayer("mediaspace").setup({
+        file: "thor.mp4",
+        modes: [{
+            type: "flash",
+            src: "jw/player.swf"
+        },{
+            type: "html5",
+            config: {
+                file: "http://d34ytc6hghhp8e.cloudfront.net/thor.mp4",
+                provider: "video"
+            }
+        }],
+        provider: "rtmp",
+        streamer: "rtmp://s2lldc6iw354i7.cloudfront.net:1935/cfx/st",
+        width: 770,
+		height: 428
+    });
+</script>
 
 
-      <!-- Example row of columns -->
-	<div class="row">
-	  
-        <div class="span4 movie">
-		  <p><img src="images/hd_720.png" /> <a class="btn btn-inverse" href="thor.html">Play in browser <i class="icon-play icon-white"></i> </a> </p>
-		  <a href="thor.html"><img class="poster" src="images/thor.jpg" /></a><br />
-		  <h2>Marvel One-Shot</h2>
-          <p>A Funny Thing Happened on the Way to Thor's Hammer</p>
-        </div>
-
-        <div class="span4 movie">
-		  <p><img src="images/sd.png" /> <a class="btn btn-inverse" href="work.html">Play in browser <i class="icon-play icon-white"></i> </a> </p>
-		  <a href="work.html"><img class="poster" src="images/work.jpg" /></a>
-          <h2>Workaholics</h2>
-		  <p>Workaholics follows Blake, Adam and Ders, three friends who work together as telemarketers from 9 to 5, live together from 5 to 9 and party together 24/7.</p>
-        </div>
-		
-	</div>
-	  
-	  
-      <hr>
+     <hr>
 
       <footer>
-        <p>With great streaming comes great uh... umm... f#$* it, we'll do it live!</p>
+        <p>Thory about that...</p>
       </footer>
 
     </div> <!-- /container -->
@@ -107,3 +116,5 @@
 
   </body>
 </html>
+
+	
