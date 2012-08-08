@@ -79,16 +79,24 @@
 	<div id='mediaspace'>This text will be replaced</div>
 </div>
  
-<script type='text/javascript'>
-  jwplayer('mediaspace').setup({
-    'flashplayer': 'jw/player.swf',
-    'file': 'work.mp4',
-    'streamer': 'rtmp://s2lldc6iw354i7.cloudfront.net:1935/cfx/st',
-    'autostart': 'false',
-    'controlbar': 'bottom',
-    'width': '770',
-    'height': '428'
-  });
+<script type="text/javascript">
+    jwplayer("mediaspace").setup({
+        file: "work.mp4",
+        height: 270,
+        modes: [{
+            type: "flash",
+            src: "/assets/player.swf"
+        },{
+            type: "html5",
+            config: {
+                file: "http://d34ytc6hghhp8e.cloudfront.net/work.mp4"
+                provider: "video"
+            }
+        }],
+        provider: "rtmp",
+        streamer: "rtmp://s2lldc6iw354i7.cloudfront.net:1935/cfx/st",
+        width: 480
+    });
 </script>
 
 
