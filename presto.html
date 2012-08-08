@@ -14,7 +14,6 @@
 		body, html {
 			background: #111;
 		}
-		.test {}
 		#header {
 			width: 100%;
 			margin-bottom: 50px;
@@ -23,14 +22,14 @@
 		}
 		.movie{
 			text-align: center;
-			padding:15px;
-			background: #222;
-			color: white;
-			box-shadow: 1px 1px 30px #000;
 		}
-		.poster {
+		.movie img {
 			box-shadow: 1px 1px 15px #000;
-			margin: 7px;
+			margin: 10px;
+		}
+		#videoplayer {
+			margin: auto;
+			width:770px;
 		}
     </style>
 	
@@ -46,7 +45,7 @@
 
   <body>
 
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-fixed-top visible-phone">
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -54,7 +53,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">/bin/flix/</a>
+          <a class="brand" href="#">BENFLIX</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="#">Movies</a></li>
@@ -67,45 +66,44 @@
     </div>
 
     <div id="header">
-
+    	<img src="images/benflix.jpg" width="250">
     </div>
 	
     <div class="container">
     
 
+<script type='text/javascript' src='jw/jwplayer.js'></script>
+ 
+<div id="videoplayer">
+	<h2>THOR</h2>
+	<div id='mediaspace'>THOR WILL REPLACE THIS TEXT</div>
+</div>
+ 
+<script type="text/javascript">
+    jwplayer("mediaspace").setup({
+        file: "presto.mp4",
+        modes: [{
+            type: "flash",
+            src: "jw/player.swf"
+        },{
+            type: "html5",
+            config: {
+                file: "http://d34ytc6hghhp8e.cloudfront.net/presto.mp4",
+                provider: "video"
+            }
+        }],
+        provider: "rtmp",
+        streamer: "rtmp://s2lldc6iw354i7.cloudfront.net:1935/cfx/st",
+        width: 770,
+		height: 428
+    });
+</script>
 
 
-      <!-- Example row of columns -->
-	<div class="row">
-	  
-        <div class="span4 ">
-			<div class="movie">
-			  <a href="thor.html"><img class="poster" src="images/thor.jpg" /></a><br />
-			  <h2><img src="images/hd_720.png" /> Marvel One-Shot </h2>
-		    </div>
-        </div>
-
-        <div class="span4">
-			<div class="movie">
-			  <a href="work.html"><img class="poster" src="images/work.jpg" /></a>
-			  <h2><img src="images/sd.png" />  Workaholics </h2>
-			</div>
-        </div>
-		
-        <div class="span4">
-			<div class="movie">
-			  <a href="presto.html"><img class="poster" src="images/presto.jpg" /></a>
-			  <h2><img src="images/sd.png" />  Pixar's Presto </h2>
-			</div>
-        </div>		
-		
-	</div>
-	  
-	  
-      <hr>
+     <hr>
 
       <footer>
-        <p>With great streaming comes great uh... umm... f#$* it, we'll do it live!</p>
+        <p>Thory about that...</p>
       </footer>
 
     </div> <!-- /container -->
@@ -118,3 +116,5 @@
 
   </body>
 </html>
+
+	
