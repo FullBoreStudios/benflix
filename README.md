@@ -20,6 +20,8 @@ So here is the steps I have taken so far:
 
 5. Next? Well I want to make a simple db driven web app with an admin for adding/managing videos and the front end UI I am already making below. I think it should have a destop/plex/xmbc app as well so you can move videos from your local storage to the cloud or vice versa easily. I am 90% done modifying an existing python based rtmp plugin for XMBC to be pretty and work with cloudfront (works, not pretty yet!)
 
+* Need to check out Apple's HTTP Live Streaming (thanks randomcoder)
+
 >> Live example of UI with flash rmtp streaming and html5 fallback: http://benflix.benmcnelly.com/benflix/
 >> Bonus picture of boobs: http://i.imgur.com/UrQOb.jpg
 
