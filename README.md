@@ -1,6 +1,6 @@
 /bin/flix/
 
-#Nutshell: Personal cloud streaming service and want to open source it so other people can take advantage of it.
+#Nutshell: Personal cloud streaming service
 
 Find a need:
 I am constantly frustrated by the way google play, my google tv, netflix, hulu amazon on demand, and everyone else I gave money to handles the movies I rent or buy. I am constantly limited on what device, service, online/offline, and everything else when it comes to playing back the stuff I just bought. I just want to dump all those services and make my own cloud based streaming service. I cant even play back movies I buy on google play on my google tv, even in the browser. wat. Forget that...
