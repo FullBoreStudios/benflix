@@ -13,10 +13,9 @@
     <style type="text/css">
 		body, html {
 			background: #111;
+			margin-top: 30px;
 		}
-		.page{
-
-		}
+		.test {}
 		#header {
 			width: 100%;
 			margin-bottom: 50px;
@@ -43,7 +42,7 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="shortcut icon" href="images/video.png">
+    <link rel="shortcut icon" href="images/favicon.png">
 
   </head>
 
@@ -100,57 +99,44 @@
   </div><!-- /navbar -->
 
 	
-<div class="container page">
+    <div class="container">
     
-<div class="alert alert-success">
-  <button class="close" data-dismiss="alert"> X </button>
-  <strong>Notice!</strong> This is just a static front end right now, go to <a href="https://github.com/benmcnelly/benflix">github</a> and check out the project. Next up, back end admin and simple database...
+
+<script type='text/javascript' src='jw/jwplayer.js'></script>
+ 
+<div id="videoplayer">
+	<h2><img src="images/hd_1080.png" /> CCC TEST </h2>
+	<div id='mediaspace'>CCC REPLACE THIS TEXT</div>
 </div>
+ 
+<script type="text/javascript">
+    jwplayer("mediaspace").setup({
+        file: "8-12-12-am.mp4",
+        modes: [{
+            type: "flash",
+            src: "jw/player.swf"
+        },{
+            type: "html5",
+            config: {
+                file: "http://d34ytc6hghhp8e.cloudfront.net/8-12-12-am.mp4",
+                provider: "video"
+            }
+        }],
+        provider: "rtmp",
+        streamer: "rtmp://s2lldc6iw354i7.cloudfront.net:1935/cfx/st",
+        width: 420,
+		height: 280
+    });
+</script>
 
 
-      <!-- Example row of columns -->
-	<div class="row">
-	
-        <div class="span4">
-			<div class="movie">
-			  <a href="ccc.html"><img class="poster" src="images/ccc.jpg" /></a>
-			  <h2><img src="images/sd.png" /> Test Sermon </h2>
-			</div>
-        </div>		
-		
-        <div class="span4">
-			<div class="movie">
-			  <a href="bunny.html"><img class="poster" src="images/bunny.jpg" /></a>
-			  <h2><img src="images/hd_1080.png" /> Big Buck Bunny </h2>
-			</div>
-        </div>				
-	  
-        <div class="span4 ">
-			<div class="movie">
-			  <a href="thor.html"><img class="poster" src="images/thor.jpg" /></a><br />
-			  <h2><img src="images/hd_720.png" /> Marvel One-Shot </h2>
-		    </div>
-        </div>
-		
-        <div class="span4">
-			<div class="movie">
-			  <a href="ghost.html"><img class="poster" src="images/ghost.jpg" /></a>
-			  <h2><img src="images/sd.png" />  Ghost Recon: Alpha </h2>
-			</div>
-        </div>	
-
-		
-		
-	</div>
-	  
-	  
-      <hr>
+     <hr>
 
       <footer>
-        <p>With great streaming comes great uh... umm... f#$* it, we'll do it live!</p>
+        <p>CCC</p>
       </footer>
 
-</div> <!-- /container -->
+    </div> <!-- /container -->
 
     <!-- Le javascript
     ================================================== -->
@@ -160,3 +146,5 @@
 
   </body>
 </html>
+
+	
