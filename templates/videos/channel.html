@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load custom_filters %}
+{% block active1 %}
+class="active"
+{% endblock %}
+{% block title %}
+- Channel: {{ channel.name }}
+{% endblock %}
+{% block rss %}
+<link rel="alternate" type="application/rss+xml" title="Channel Original Feed (Torrents)" href="/feeds/{{ channel.slug }}/torrent/" />
+<link rel="alternate" type="application/rss+xml" title="Channel Video Feed (MP4)" href="/feeds/{{ channel.slug }}/mp4/" />
+<link rel="alternate" type="application/rss+xml" title="Channel Video Feed (WEBM)" href="/feeds/{{ channel.slug }}/webm/" />
+<link rel="alternate" type="application/rss+xml" title="Channel Audio Feed (MP3)" href="/feeds/{{ channel.slug }}/mp3/" />
+<link rel="alternate" type="application/rss+xml" title="Channel Audio Feed (OGG)" href="/feeds/{{ channel.slug }}/ogg/" />
+{% endblock %}
+{% block body %}
+<div class="page-header">
+<h1>Channel: {{ channel.name }}</h1>
+{% if channel.description %}
+<p>{{ channel.description }}</p>
+{% endif %}
+</div>
+<div class="row">
+<div class="span8">
+<ul class="nav nav-tabs">
+  <li>
+    <a href="/">Neuste Videos</a>
+  </li>
+  {% for aChannel in channel_list %}
+  {% if aChannel.featured %}
+      {% if channel.slug == aChannel.slug %}
+          <li class="active"><a href="/videos/channel/{{ aChannel.slug }}/">{{ aChannel.name }}</a></li>
+     {% else %}
+          <li><a href="/videos/channel/{{ aChannel.slug }}/">{{ aChannel.name }}</a></li>
+     {% endif %}
+  {% endif %}
+  {% endfor %}
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Alle Channel
+        <b class="caret"></b>
+      </a>
+    <ul class="dropdown-menu">
+         {% for aChannel in channel_list %}
+            <li><a href="/videos/channel/{{ aChannel.slug }}/">{{ aChannel.name }}</a></li>
+         {% endfor %}
+    </ul>
+  </li>
+</ul>
+{% if videos_list %}
+    {% for video in videos_list %}
+    <div class="row">
+    <div class="span6 well">
+	{% if video.kind != 1 %}
+	{% if video.videoThumbURL %}
+	<img src="{{ video.videoThumbURL }}" width="100px" style="float:left; margin:0 10px 0 0;"/>
+	{% else %}
+	<img src="{{ STATIC_URL }}/default-video.png" width="100px" style="float:left; margin:0 10px 0 0;"/>
+	{% endif %}
+	{% else %}
+	<img src="{{ STATIC_URL }}/default-audio.png" width="100px" style="float:left; margin:0 10px 0 0;"/>
+	{% endif %}
+        <a href="/videos/{{ video.slug }}/"><h4>{{ video.title }}</h4></a>
+	<span><strong>Beschreibung: </strong>{{ video.description|truncatechars:100 }}</span><br/>
+        <span><strong>Datum: </strong>{{ video.date }}{% if video.duration %} &bull; <strong>Länge: </strong>{{ video.duration|secondstohms }}{% endif %}</span>
+	</div>
+	</div>
+    {% endfor %}
+{% else %}
+    <p>No videos are available.</p>
+{% endif %}
+<ul class="pager">
+{% if videos_list.has_previous %}
+  <li class="previous">
+      <a href="?page={{ videos_list.previous_page_number }}">&larr; &Auml;lter</a>
+  </li>
+{% endif %}
+{% if videos_list.has_next %}
+  <li class="next">
+      <a href="?page={{ videos_list.next_page_number }}">Neuer &rarr;</a>
+    </li>
+{% endif %}
+</ul>
+</div>
+<div class="span4">
+<div class=well>
+<ul class="nav nav-list">
+  <li class="nav-header">
+    Original Material
+  </li>
+  <li>
+    <a href="/feeds/{{ channel.slug }}/torrent/"">Torrents-Feed</a>
+  </li>
+  <li class="nav-header">
+    Video-Podcast
+  </li>
+  <li>
+    <a href="/feeds/{{ channel.slug }}/mp4/">MP4-Format</a>
+  </li>
+  <li>
+    <a href="/feeds/{{ channel.slug }}/webm/">WEBM-Format</a>
+  </li>
+  <li class="nav-header">
+    Audio-Podcast
+  </li>
+  <li>
+    <a href="/feeds/{{ channel.slug }}/mp3/">MP3-Format</a>
+  </li>
+  <li>
+    <a href="/feeds/{{ channel.slug }}/ogg/">OGG-Format</a>
+  </li>
+</ul>
+</div>
+</div>
+</div>
+{% endblock %}

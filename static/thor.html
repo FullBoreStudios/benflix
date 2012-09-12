@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>/bin/flix/</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    
+    <style type="text/css">
+		body, html {
+			background: #111;
+			margin-top: 30px;
+		}
+		.test {}
+		#header {
+			width: 100%;
+			margin-bottom: 50px;
+			background: #db0505;
+			box-shadow: 1px 1px 30px #000;
+		}
+		.movie{
+			text-align: center;
+			padding:15px;
+			margin:15px;
+			background: url(images/wat.png) #222;
+			color: white;
+			box-shadow: 1px 1px 30px #000;
+		}
+		.poster {
+			box-shadow: 1px 1px 15px #000;
+			margin: 7px;
+		}
+    </style>
+	
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+  </head>
+
+  <body>
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">bin/flix</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Internet</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filters <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">HD Only</a></li>
+                <li><a href="#">Mobile Friendly</a></li>
+                <li class="divider"></li>
+                <li class="nav-header">Content Filter</li>
+                <li><a href="#">Family Movies</a></li>
+				<li><a href="#">Action Movies</a></li>
+				<li><a href="#">Chick Flicks</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-search pull-left" action="">
+            <input type="text" class="search-query span2" placeholder="Search">
+          </form>
+          <ul class="nav pull-right">
+            <li><a href="#">Sign Out</a></li>
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Profile <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Change Settings</a></li>
+                <li><a href="#">Add user</a></li>
+                <li><a href="#">Edit a user</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Add Media</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div>
+    </div><!-- /navbar-inner -->
+  </div><!-- /navbar -->
+
+    <div class="container">
+    
+
+<script type='text/javascript' src='jw/jwplayer.js'></script>
+ 
+<div id="videoplayer">
+	<h2>THOR</h2>
+	<div id='mediaspace'>THOR WILL REPLACE THIS TEXT</div>
+</div>
+ 
+<script type="text/javascript">
+    jwplayer("mediaspace").setup({
+        file: "thor.mp4",
+        modes: [{
+            type: "flash",
+            src: "jw/player.swf"
+        },{
+            type: "html5",
+            config: {
+                file: "http://d34ytc6hghhp8e.cloudfront.net/thor.mp4",
+                provider: "video"
+            }
+        }],
+        provider: "rtmp",
+        streamer: "rtmp://s2lldc6iw354i7.cloudfront.net:1935/cfx/st",
+        width: 770,
+		height: 428
+    });
+</script>
+
+
+     <hr>
+
+      <footer>
+        <p>Thory about that...</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bootstrap/js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+
+  </body>
+</html>
+
+	
